@@ -1,7 +1,14 @@
 document.addEventListener('keydown', (event) => {
     if (event.ctrlKey && event.key === 'c') {
-      event.preventDefault();
-      copyTitleAndUrl();
+      const selection = document.getSelection();
+      if (selection && selection.toString().length > 0) {
+        // テキストが選択されている場合、標準の操作を実行
+        return;
+      } else {
+        // テキストが選択されていない場合、タイトルとURLをコピー
+        event.preventDefault();
+        copyTitleAndUrl();
+      }
     }
   });
   
