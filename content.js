@@ -60,6 +60,7 @@ function showFormatSelectionPopup(isEmailOrNumberType) {
     <button id="copy-normal" class="copy-popup-button" tabindex="0">通常</button>
     <button id="copy-markdown" class="copy-popup-button" tabindex="0">Markdown</button>
     <button id="copy-textile" class="copy-popup-button" tabindex="0">Textile</button>
+    <button id="copy-path" class="copy-popup-button" tabindex="0">Pathのみ</button>
   `;
 
   document.body.appendChild(overlay);
@@ -97,13 +98,24 @@ function showFormatSelectionPopup(isEmailOrNumberType) {
 
   const handleCopy = (format) => {
     copyTitleAndUrl(format);
-    showCopyNotification(`タイトルとURLをコピーしました (${format}形式)` + (isEmailOrNumberType && format === 'normal' ? '\n[email|number型はselectionStartが機能しないので選択していても無視されます]' : ''));
+    const messages = {
+      normal: 'タイトルとURLをコピーしました (通常形式)',
+      markdown: 'タイトルとURLをコピーしました (Markdown形式)',
+      textile: 'タイトルとURLをコピーしました (Textile形式)',
+      path: 'ページのパスをコピーしました'
+    };
+    let notificationMessage = messages[format] || 'コピーしました';
+    if (isEmailOrNumberType && format === 'normal') {
+      notificationMessage += '\n[email|number型はselectionStartが機能しないので選択していても無視されます]';
+    }
+    showCopyNotification(notificationMessage);
     removePopup();
   };
 
   document.getElementById('copy-normal').onclick = () => handleCopy('normal');
   document.getElementById('copy-markdown').onclick = () => handleCopy('markdown');
   document.getElementById('copy-textile').onclick = () => handleCopy('textile');
+  document.getElementById('copy-path').onclick = () => handleCopy('path');
 
   // 最初のボタンにフォーカスを合わせる
   const buttons = popup.querySelectorAll('button');
@@ -123,9 +135,13 @@ function showFormatSelectionPopup(isEmailOrNumberType) {
 function copyTitleAndUrl(format = 'normal') {
   const title = document.title;
   const url = window.location.href;
+  const pathOnly = `${window.location.pathname}${window.location.search}${window.location.hash}`;
 
   let text;
   switch (format) {
+    case 'path':
+      text = pathOnly || '/';
+      break;
     case 'markdown':
       text = `[${title}](${url})`;
       break;
