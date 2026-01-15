@@ -12,7 +12,7 @@
 
 ## インストール方法
 
-1. 拡張機能を画面右上から`zip形式でダウンロード`します。<br>[![Image from Gyazo](https://i.gyazo.com/a467514e3d2f191f94dc31214b752bfc.png)](https://gyazo.com/a467514e3d2f191f94dc31214b752bfc)
+1. 拡張機能を画面右上から`zip形式でダウンロード`して任意のディレクトリに保存して解凍します。<br>[![Image from Gyazo](https://i.gyazo.com/a467514e3d2f191f94dc31214b752bfc.png)](https://gyazo.com/a467514e3d2f191f94dc31214b752bfc)
 2. Chromeで「拡張機能」ページを開きます（`chrome://extensions/`をアドレスバーに入力）。
 3. 画面右上の「デベロッパーモード」を有効にします。
 4. 「パッケージ化されていない拡張機能を読み込む」をクリックし、ダウンロードしたディレクトリを選択します。
