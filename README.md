@@ -13,9 +13,14 @@
 ## インストール方法
 
 1. このリポジトリをクローンまたはダウンロードします。
-2. Chromeで「拡張機能」ページを開きます（`chrome://extensions/`）。
-3. 右上の「デベロッパーモード」を有効にします。
+2. Chromeで「拡張機能」ページを開きます（`chrome://extensions/`をアドレスバーに入力）。
+3. 画面右上の「デベロッパーモード」を有効にします。
 4. 「パッケージ化されていない拡張機能を読み込む」をクリックし、ダウンロードしたディレクトリを選択します。
+
+周知 #7648: 【ご参考】利用している外部APIの整理
+<https://redmine-travel.nyango.com/issues/7648>
+
+[![Image from Gyazo](https://i.gyazo.com/89840f0b01150cc6ab4c063ecd050d4b.png)](https://gyazo.com/89840f0b01150cc6ab4c063ecd050d4b)
 
 ## ファイル構成
 
@@ -32,8 +37,19 @@ my-chrome-extension/
 ## 使用方法
 
 1. 拡張機能をインストールした後、任意のWebページを開きます。
-2. Ctrl+Cを押すと、現在のページのタイトルとURLがクリップボードにコピーされます。
+2. Ctrl+Cを押すと、現在のページのタイトルとURLがクリップボードにコピーされます。<br>[![Image from Gyazo](https://i.gyazo.com/688cd1d41a6fd26409f190a142786dd4.png)](https://gyazo.com/688cd1d41a6fd26409f190a142786dd4)
 3. 「コピーしました」というメッセージが画面中央に大きな文字で1秒間表示され、その後自動的に消えます。
+
+たとえば、
+
+ページのタイトルが`ちいプラ`で、URLが`https://nyango.com/chipla`の場合、それぞれ以下のような内容がクリップボードにコピーされます。
+
+|コマンド|コピーされる内容|備考|
+|-|-|-|
+|通常|ちいぷら<br>https://nyango.com/chipla|Eメール等で利用|
+|Markdown|`[ちいプラ](https://nyango.com/chipla)`|Redmineで利用|
+|Textile|`"ちいプラ":https://nyango.com/chipla`|旧Redmineで利用。現在は不要|
+|Pathのみ|`/chipla`||
 
 ## 注意事項
 
@@ -43,4 +59,3 @@ my-chrome-extension/
 ## ライセンス
   
 このプロジェクトはMITライセンスの下で公開されています。
-
