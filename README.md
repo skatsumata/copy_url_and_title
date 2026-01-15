@@ -12,13 +12,14 @@
 
 ## インストール方法
 
-1. このリポジトリをクローンまたはダウンロードします。
+1. 拡張機能を画面右上から`zip形式でダウンロード`します。<br>[![Image from Gyazo](https://i.gyazo.com/a467514e3d2f191f94dc31214b752bfc.png)](https://gyazo.com/a467514e3d2f191f94dc31214b752bfc)
 2. Chromeで「拡張機能」ページを開きます（`chrome://extensions/`をアドレスバーに入力）。
 3. 画面右上の「デベロッパーモード」を有効にします。
 4. 「パッケージ化されていない拡張機能を読み込む」をクリックし、ダウンロードしたディレクトリを選択します。
 
-周知 #7648: 【ご参考】利用している外部APIの整理
-<https://redmine-travel.nyango.com/issues/7648>
+### デベロッパーモードの有効化と拡張機能の読み込み方法
+
+[![Image from Gyazo](https://i.gyazo.com/7d41f77730568c30bada6cfa819ccd39.png)](https://gyazo.com/7d41f77730568c30bada6cfa819ccd39)
 
 [![Image from Gyazo](https://i.gyazo.com/89840f0b01150cc6ab4c063ecd050d4b.png)](https://gyazo.com/89840f0b01150cc6ab4c063ecd050d4b)
 
